@@ -60,7 +60,7 @@ public class QueryHandler {
             DatabaseSource.TABLE_PRODUCTS + " WHERE " + DatabaseSource.COLUMN_PRODUCTS_ID + " = ?";
 
     public static final String QUERY_UPDATE_QUANTITY = "UPDATE " + DatabaseSource.TABLE_ORDER_ITEMS + " SET " + DatabaseSource.COLUMN_ORDER_ITEMS_QUANTITY +
-            " = ? WHERE " + DatabaseSource.COLUMN_ORDER_ITEMS_PRODUCT_ID + " = ? AND " + DatabaseSource.COLUMN_ORDER_ITEMS_ORDER_ID +
+            " = ? WHERE " + DatabaseSource.COLUMN_ORDER_ITEMS_ORDER_ID + " = ? AND " + DatabaseSource.COLUMN_ORDER_ITEMS_PRODUCT_ID +
             " = ?";
 
     public static final String QUERY_CHECK_ITEM = "SELECT " + DatabaseSource.COLUMN_ORDER_ITEMS_PRODUCT_ID + ", " +
@@ -203,7 +203,7 @@ public class QueryHandler {
                 updateQuantity.setInt(3, orderID);
                 System.out.println(updateQuantity);
                 int affectedRows = updateQuantity.executeUpdate();
-                if (affectedRows == 1) {
+                if (affectedRows > 0) {
                     conn.commit();
                 } else {
                     throw new SQLException("Couldn't update quantity");

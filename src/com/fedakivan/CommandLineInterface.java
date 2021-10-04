@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class CommandLineInterface {
     public static String[] alphabet = new String[]{"addproduct", "addorder", "updatequantity", "showview", "removeproduct", "help"};
     private static final List<String> commands = Arrays.asList(alphabet);
-
+    public static final String DATABASE = "shop";
     public static void main(String[] args) {
         StartMessage.startMessage();
         DatabaseSource dataSource = new DatabaseSource();
-        if (!dataSource.open()) {
+        if (!dataSource.open(DATABASE)) {
             System.out.println("Can't open database");
             return;
         }

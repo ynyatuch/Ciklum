@@ -9,8 +9,6 @@ import java.util.Properties;
 
 public class DatabaseSource {
 
-    public static final String DATABASE = "shop";
-
     public static final String TABLE_ORDERS = "orders";
     public static final String COLUMN_ORDERS_ID = "id";
     public static final String COLUMN_ORDERS_USER_ID = "user_id";
@@ -72,11 +70,11 @@ public class DatabaseSource {
         }
     }
 
-    private boolean createDatabase(){
+    private boolean createDatabase(String databaseName){
         try {
             Statement statement = conn.createStatement();
-            statement.executeUpdate(CREATE_DATABASE + DATABASE);
-            statement.execute("USE " + DATABASE);
+            statement.executeUpdate(CREATE_DATABASE + databaseName);
+            statement.execute("USE " + databaseName);
             return true;
         } catch (SQLException e) {
             System.out.println("Couldn't create database: " + e);
@@ -84,10 +82,10 @@ public class DatabaseSource {
         }
     }
 
-    public boolean open() {
+    public boolean open(String databaseName) {
         try {
             conn = getConnection();
-            if (!createDatabase()){
+            if (!createDatabase(databaseName)){
                 return false;
             }
             return createTables();

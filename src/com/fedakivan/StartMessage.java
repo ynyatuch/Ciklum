@@ -12,6 +12,7 @@ public class StartMessage {
                 showview           - Show different views.
                 removeproduct      - Remove product by ID / Remove all products only if you enter a password
                 help               - Show list of possible commands
+                Q, exit            - Exit program
                                 
                 After executing of commands, app will route you with next steps for particular command.
                 """;

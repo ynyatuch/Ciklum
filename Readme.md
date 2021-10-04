@@ -9,7 +9,7 @@ Java download page:
 https://www.oracle.com/java/technologies/downloads/
 
 Prerequisites:
-1. Run MySQL Command Line Client (on Windows).
+1. Run MySQL Shell.
 2. Change language to SQL: 
                
          \sql
@@ -20,11 +20,16 @@ Prerequisites:
 Use username and port set during MySQL installation (e.g: \connect root@localhost:3306)
 
 To run application download it and run terminal in "Ciklum" directory.
+I. Update local.properties file with used username and password.
 
-I. Run command:
+II. Run command:
             
                java -jar Ciklum.jar
 
-II. Follow application's instructions.
+III. Follow application's instructions.
 
-To start automation test: 
+To start automation test run command:
+
+               java -jar Test.jar
+
+P.S. test coverage is very poor - my bad :(. 

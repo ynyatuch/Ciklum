@@ -80,11 +80,11 @@ public class CommandHandler {
                             String password;
                             while (true) {
                                 try {
-                                    Console console = System.console();
-                                    char enteredPassword[] = console.readPassword("Enter your password:");
-                                    password = String.valueOf(enteredPassword);
-//                                    System.out.println("Enter your password: ");
-//                                    password = scanner.nextLine();
+//                                    Console console = System.console();
+//                                    char enteredPassword[] = console.readPassword("Enter your password:");
+//                                    password = String.valueOf(enteredPassword);
+                                    System.out.println("Enter your password: ");
+                                    password = scanner.nextLine();
                                     break;
                                 } catch (Exception e) {
                                     System.out.println("Wrong input. Try again");
